@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\propiedadController;
-
+use App\Models\Propiedad;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,10 @@ use App\Http\Controllers\propiedadController;
 Route::get('/', [propiedadController::class,'index'])->name('propiedad.home');
 Route::get ('/propiedades/crear',[propiedadController::class,'create'])->name('propiedad.create');
 Route::post('/propiedades/guardar',[propiedadController::class,'store'])->name('propiedad.store');
+Route::get('/propiedades/editar/{id}',[propiedadController::class,'edit'])->name('propiedad.edit');
+Route::get('/propiedades/eliminar/{id}',[propiedadController::class,'delete'])->name('propiedad.delete');
+Route::put('/propiedades/update/{id}',[propiedadController::class, 'update'])->name('propiedad.update');
+
 
 
 //get: mostrar o acceder

@@ -12,6 +12,7 @@
     <h1>Mantenimiento de propiedades</h1>
     <br>
     <br>
+
     <a href="{{route('propiedad.create')}}" class="btn btn-primary"> crear nueva propiedad</a>
     
     <table>
@@ -24,6 +25,8 @@
                 <th>costoxmetro</th>
                 <th>CodigoDuenio</th>
                 <th>Domicilio</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
                 
             </tr>
         </thead>
@@ -38,6 +41,10 @@
                 <td>{{ $propiedad->costoxmetro}}</td>
                 <td>{{ $propiedad->codigoDuenio}}</td>
                 <td>{{ $propiedad->domicilio}}</td>
+                <td><a href="{{route('propiedad.edit', $propiedad->codigoPropiedad)}}">editar</a></td>
+                <td><a href="{{route('propiedad.delete', $propiedad->codigoPropiedad)}}">eliminar</a></td>
+               
+
                 
             </tr>
                 
@@ -47,5 +54,20 @@
             
         </body>
     </table>
+
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 10px;
+            
+        }
+
+        th {
+        border-bottom: 1px solid black; /* Establecer borde inferior */
+        padding: 8px; /* Agregar relleno para que el texto no esté pegado al borde */
+        }
+
+      
+    </style>
 </body>
 </html>

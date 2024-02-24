@@ -38,7 +38,37 @@ class propiedadController extends Controller
         
         $nvaPropiedad->save();
 
-       return $this->index();
+       return redirect('/');
 
+    }
+
+    public function edit($id){
+
+       
+        $nvaPropiedad = Propiedad::find($id);
+        return view('edit', compact('nvaPropiedad'));
+    }
+
+    public function update(request $req, $id){
+
+        $propiedad = Propiedad::find($id);
+        $propiedad->color = $req->input('color');
+        $propiedad->metros = $req->input('metros');
+        $propiedad->tipoPropiedad = $req->input('tipo');
+        $propiedad->costoxmetro = $req->input('costoxmetro');
+        $propiedad->codigoDuenio = $req->input('codigoDuenio');
+        $propiedad->domicilio = $req->input('domicilio');
+
+        $propiedad->save();
+
+        return redirect('/');
+        
+    }
+
+    
+    public function delete($id){
+
+      
+        $nvaPropiedad = Propiedad::find($id);
     }
 }
