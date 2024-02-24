@@ -11,53 +11,52 @@
     <title>Editar propiedad</title>
 </head>
 <body>
-    <h2>Editar propiedad</h2>
-    <br>
-    <div class="form-group">
-        <label for="color">Codigo propiedad</label>
-        <input type="text" class="form-control" value="{{$nvaPropiedad->codigoPropiedad}}" readonly>
-
-    </div>
-
-    <form action="{{route('propiedad.update', $nvaPropiedad->codigoPropiedad)}}" method="POST">
-        
-        @csrf
-        @method('PUT')
-
-        <div>
-            <label>Color</label>
-            <input type="text" name="color" value="{{$nvaPropiedad->color}}">
+    <div class="container">
+        <h2>Editar propiedad</h2>
+        <br>
+        <div class="form-group">
+            <label for="color">Código de propiedad</label>
+            <input type="text" class="form-control" value="{{$nvaPropiedad->codigoPropiedad}}" readonly>
         </div>
 
-        <div>
-            <label>Metros</label>
-            <input type="text" name="metros" value="{{$nvaPropiedad->metros}}">
-        </div>
+        <form action="{{route('propiedad.update', $nvaPropiedad->codigoPropiedad)}}" method="POST">
+            @csrf
+            @method('PUT')
 
-        <div>
-            <label>Tipo</label>
-            <input type="text" name="tipo" value="{{$nvaPropiedad->tipoPropiedad}}">
-        </div>        
+            <div class="mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="text" class="form-control" name="color" value="{{$nvaPropiedad->color}}">
+            </div>
 
-        <div>
-            <label>Costo x Metro</label>
-            <input type="text" name="costoxmetro" value="{{$nvaPropiedad->costoxmetro}}">
-        </div>
+            <div class="mb-3">
+                <label for="metros" class="form-label">Metros</label>
+                <input type="text" class="form-control" name="metros" value="{{$nvaPropiedad->metros}}">
+            </div>
 
-        <div>
-            <label>Codigo Duenio</label>
-            <input type="text" name="codigoDuenio" value="{{$nvaPropiedad->codigoDuenio}}">
-        </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <input type="text" class="form-control" name="tipo" value="{{$nvaPropiedad->tipoPropiedad}}">
+            </div>
 
-        <div>
-            <label>Domicilio</label>
-            <input type="text" name="domicilio" value="{{$nvaPropiedad->domicilio}}">
-        </div>
-       
-        <div>
+            <div class="mb-3">
+                <label for="costoxmetro" class="form-label">Costo x Metro</label>
+                <input type="text" class="form-control" name="costoxmetro" value="{{$nvaPropiedad->costoxmetro}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="codigoDuenio" class="form-label">Código Dueño</label>
+                <input type="text" class="form-control" name="codigoDuenio" value="{{$nvaPropiedad->codigoDuenio}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="domicilio" class="form-label">Domicilio</label>
+                <input type="text" class="form-control" name="domicilio" value="{{$nvaPropiedad->domicilio}}">
+            </div>
+
             <button type="submit" class="btn btn-success">Guardar</button>
-        </div>
-        
-    </form>
+        </form>
+    </div>
 </body>
+
+
 </html>

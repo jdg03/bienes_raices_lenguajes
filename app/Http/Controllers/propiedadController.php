@@ -68,7 +68,20 @@ class propiedadController extends Controller
     
     public function delete($id){
 
-      
-        $nvaPropiedad = Propiedad::find($id);
+        //$propiedad = Propiedad::where('color');
+
+        $propiedad = Propiedad::find($id);
+
+        return view('delete',compact('propiedad'));
+    }
+
+    public function destroy($id){
+
+       
+
+        $propiedad = Propiedad::find($id);
+        $propiedad->delete();
+
+        return redirect('/');
     }
 }
